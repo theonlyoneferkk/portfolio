@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:3</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .darkMode {
+            background-color: black;
+            color: white;
+        }
+
+        #darklight {
+            padding: 0.5rem;
+        }
+    </style>
+    <script>
+        console.log(":3")
+
+        const toggleDarkMode = () => {
+            const body = document.querySelector("body");
+            const lightToggle = document.querySelector("#darklight");
+            const isDarkMode = localStorage.getItem("darkmode") === "dark";
+
+            if (isDarkMode) {
+                localStorage.setItem("darkmode", "light");
+                body.classList.remove("darkMode");
+                lightToggle.innerText = "Dark Mode";
+            } else {
+                localStorage.setItem("darkmode", "dark");
+                body.classList.add("darkMode");
+                lightToggle.innerText = "Light Mode";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const lightToggle = document.querySelector("#darklight");
+
+            if (localStorage.getItem("darkmode") === "dark") {
+                document.body.classList.add("darkMode");
+                lightToggle.innerText = "Light Mode";
+            } else {
+                lightToggle.innerText = "Dark Mode";
+            }
+
+            lightToggle.addEventListener("click", toggleDarkMode);
+        })
+    </script>
+</head>
+
+<body>
+    <button id="darklight" type="button">Toggle Light/Dark</button>
+    <h1>Ciao 👋</h1>
+    <h2>Il mio nome è Federico, ma puoi chiamarmi "Ferkk"</h2>
+    <p>
+        Sin dalle scuole medie mi affascinava il mondo dell'Informatica e della Tecnologia,
+        e sto tutt'ora frequentando un istituto che tratta materie a riguardo. <br>
+        Ho studiato negli anni abbastanza da poter dire di non essere "nuovo" all'argomento, ma il tragitto è ancora
+        lungo.
+    </p>
+    <p>
+        In ogni caso, buona fortuna con la vita amico! <br>
+        Di questi tempi ne serve parecchia.
+    </p>
+    <footer>- Federico</footer>
+</body>
+
+</html>
